@@ -86,4 +86,4 @@ The current version (1.0.1) supports the following features:
 * Support for detailed field and method documentation
 * Support for parameter, return value, and exception documentation
 
-If you find any issues, please feel free to submit a Pull Request or provide feedback in the Gitter channel. 
+If you find any issues, please feel free to submit a Pull Request. 

@@ -87,4 +87,4 @@ JavadocMark使用Apache License, Version 2.0许可证。
 * 支持字段和方法的详细文档
 * 支持参数、返回值和异常的文档
 
-如果你发现任何问题，请随时提交Pull Request或在Gitter频道中反馈。
+如果你发现任何问题，请随时提交Pull Request。
