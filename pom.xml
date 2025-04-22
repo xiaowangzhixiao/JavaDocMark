@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.manxiaozhi</groupId>
+	<artifactId>javadocmark</artifactId>
+	<version>1.0.0</version>
+	<name>JavadocMark</name>
+	<description>JavadocMark is a custom Java Doclet which aims to generate a Javadoc in a markdown format which is ready to use in GitHub.</description>
+	<url>https://github.com/xiaowangzhixiao/javadocmark</url>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Wang Zhi</name>
+			<email>xiaowangzhixiao@gmail.com</email>
+			<organization>xiaowangzhixiao</organization>
+			<organizationUrl>https://github.com/xiaowangzhixiao</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:xiaowangzhixiao/javadocmark.git</connection>
+		<developerConnection>scm:git:git@github.com:xiaowangzhixiao/javadocmark.git</developerConnection>
+		<url>git@github.com:xiaowangzhixiao/javadocmark.git</url>
+	</scm>
+	<packaging>jar</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+	<profiles>
+		<profile>
+			<id>javadocmark-generation</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9</version>
+						<configuration>
+							<doclet>com.manxiaozhi.javadocmark.JavadocMark</doclet>
+							<docletArtifact>
+								<groupId>com.manxiaozhi</groupId>
+								<artifactId>javadocmark</artifactId>
+								<version>1.0.0</version>
+							</docletArtifact>
+							<reportOutputDirectory>./</reportOutputDirectory>
+							<destDir>./</destDir>
+							<additionalparam>-d javadoc/</additionalparam>
+							<useStandardDocletOptions>false</useStandardDocletOptions>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-wrapper-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
